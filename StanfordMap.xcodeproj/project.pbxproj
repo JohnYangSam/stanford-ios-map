@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F7C742C21B052FE00057DD8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C742C11B052FE00057DD8E /* AppDelegate.swift */; };
+		F7C742C41B052FE00057DD8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C742C31B052FE00057DD8E /* ViewController.swift */; };
+		F7C742C71B052FE00057DD8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7C742C51B052FE00057DD8E /* Main.storyboard */; };
+		F7C742C91B052FE00057DD8E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7C742C81B052FE00057DD8E /* Images.xcassets */; };
+		F7C742CC1B052FE00057DD8E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7C742CA1B052FE00057DD8E /* LaunchScreen.xib */; };
+		F7C742D81B052FE00057DD8E /* StanfordMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C742D71B052FE00057DD8E /* StanfordMapTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F7C742D21B052FE00057DD8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7C742B41B052FDF0057DD8E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7C742BB1B052FE00057DD8E;
+			remoteInfo = StanfordMap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F7C742BC1B052FE00057DD8E /* StanfordMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StanfordMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7C742C01B052FE00057DD8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7C742C11B052FE00057DD8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F7C742C31B052FE00057DD8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F7C742C61B052FE00057DD8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F7C742C81B052FE00057DD8E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F7C742CB1B052FE00057DD8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F7C742D11B052FE00057DD8E /* StanfordMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StanfordMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7C742D61B052FE00057DD8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7C742D71B052FE00057DD8E /* StanfordMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StanfordMapTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F7C742B91B052FE00057DD8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7C742CE1B052FE00057DD8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F7C742B31B052FDF0057DD8E = {
+			isa = PBXGroup;
+			children = (
+				F7C742BE1B052FE00057DD8E /* StanfordMap */,
+				F7C742D41B052FE00057DD8E /* StanfordMapTests */,
+				F7C742BD1B052FE00057DD8E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F7C742BD1B052FE00057DD8E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F7C742BC1B052FE00057DD8E /* StanfordMap.app */,
+				F7C742D11B052FE00057DD8E /* StanfordMapTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F7C742BE1B052FE00057DD8E /* StanfordMap */ = {
+			isa = PBXGroup;
+			children = (
+				F7C742C11B052FE00057DD8E /* AppDelegate.swift */,
+				F7C742C31B052FE00057DD8E /* ViewController.swift */,
+				F7C742C51B052FE00057DD8E /* Main.storyboard */,
+				F7C742C81B052FE00057DD8E /* Images.xcassets */,
+				F7C742CA1B052FE00057DD8E /* LaunchScreen.xib */,
+				F7C742BF1B052FE00057DD8E /* Supporting Files */,
+			);
+			path = StanfordMap;
+			sourceTree = "<group>";
+		};
+		F7C742BF1B052FE00057DD8E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F7C742C01B052FE00057DD8E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F7C742D41B052FE00057DD8E /* StanfordMapTests */ = {
+			isa = PBXGroup;
+			children = (
+				F7C742D71B052FE00057DD8E /* StanfordMapTests.swift */,
+				F7C742D51B052FE00057DD8E /* Supporting Files */,
+			);
+			path = StanfordMapTests;
+			sourceTree = "<group>";
+		};
+		F7C742D51B052FE00057DD8E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F7C742D61B052FE00057DD8E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F7C742BB1B052FE00057DD8E /* StanfordMap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7C742DB1B052FE00057DD8E /* Build configuration list for PBXNativeTarget "StanfordMap" */;
+			buildPhases = (
+				F7C742B81B052FE00057DD8E /* Sources */,
+				F7C742B91B052FE00057DD8E /* Frameworks */,
+				F7C742BA1B052FE00057DD8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StanfordMap;
+			productName = StanfordMap;
+			productReference = F7C742BC1B052FE00057DD8E /* StanfordMap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F7C742D01B052FE00057DD8E /* StanfordMapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7C742DE1B052FE00057DD8E /* Build configuration list for PBXNativeTarget "StanfordMapTests" */;
+			buildPhases = (
+				F7C742CD1B052FE00057DD8E /* Sources */,
+				F7C742CE1B052FE00057DD8E /* Frameworks */,
+				F7C742CF1B052FE00057DD8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F7C742D31B052FE00057DD8E /* PBXTargetDependency */,
+			);
+			name = StanfordMapTests;
+			productName = StanfordMapTests;
+			productReference = F7C742D11B052FE00057DD8E /* StanfordMapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F7C742B41B052FDF0057DD8E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Silicon Valley Insight";
+				TargetAttributes = {
+					F7C742BB1B052FE00057DD8E = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					F7C742D01B052FE00057DD8E = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = F7C742BB1B052FE00057DD8E;
+					};
+				};
+			};
+			buildConfigurationList = F7C742B71B052FE00057DD8E /* Build configuration list for PBXProject "StanfordMap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F7C742B31B052FDF0057DD8E;
+			productRefGroup = F7C742BD1B052FE00057DD8E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F7C742BB1B052FE00057DD8E /* StanfordMap */,
+				F7C742D01B052FE00057DD8E /* StanfordMapTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F7C742BA1B052FE00057DD8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7C742C71B052FE00057DD8E /* Main.storyboard in Resources */,
+				F7C742CC1B052FE00057DD8E /* LaunchScreen.xib in Resources */,
+				F7C742C91B052FE00057DD8E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7C742CF1B052FE00057DD8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F7C742B81B052FE00057DD8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7C742C41B052FE00057DD8E /* ViewController.swift in Sources */,
+				F7C742C21B052FE00057DD8E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7C742CD1B052FE00057DD8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7C742D81B052FE00057DD8E /* StanfordMapTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F7C742D31B052FE00057DD8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7C742BB1B052FE00057DD8E /* StanfordMap */;
+			targetProxy = F7C742D21B052FE00057DD8E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F7C742C51B052FE00057DD8E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7C742C61B052FE00057DD8E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F7C742CA1B052FE00057DD8E /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7C742CB1B052FE00057DD8E /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F7C742D91B052FE00057DD8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F7C742DA1B052FE00057DD8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F7C742DC1B052FE00057DD8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StanfordMap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F7C742DD1B052FE00057DD8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StanfordMap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F7C742DF1B052FE00057DD8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = StanfordMapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StanfordMap.app/StanfordMap";
+			};
+			name = Debug;
+		};
+		F7C742E01B052FE00057DD8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = StanfordMapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StanfordMap.app/StanfordMap";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F7C742B71B052FE00057DD8E /* Build configuration list for PBXProject "StanfordMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7C742D91B052FE00057DD8E /* Debug */,
+				F7C742DA1B052FE00057DD8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7C742DB1B052FE00057DD8E /* Build configuration list for PBXNativeTarget "StanfordMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7C742DC1B052FE00057DD8E /* Debug */,
+				F7C742DD1B052FE00057DD8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F7C742DE1B052FE00057DD8E /* Build configuration list for PBXNativeTarget "StanfordMapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7C742DF1B052FE00057DD8E /* Debug */,
+				F7C742E01B052FE00057DD8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F7C742B41B052FDF0057DD8E /* Project object */;
+}
