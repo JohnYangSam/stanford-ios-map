@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6CB8376767BBD86597CEEC48 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EF7B56C691E593E790B4DC /* libPods.a */; };
+		F7484C6F1B05411F00E82475 /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7484C6E1B05411F00E82475 /* SearchManager.swift */; };
 		F7C742C21B052FE00057DD8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C742C11B052FE00057DD8E /* AppDelegate.swift */; };
 		F7C742C41B052FE00057DD8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C742C31B052FE00057DD8E /* ViewController.swift */; };
 		F7C742C71B052FE00057DD8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7C742C51B052FE00057DD8E /* Main.storyboard */; };
 		F7C742C91B052FE00057DD8E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7C742C81B052FE00057DD8E /* Images.xcassets */; };
 		F7C742CC1B052FE00057DD8E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7C742CA1B052FE00057DD8E /* LaunchScreen.xib */; };
 		F7C742D81B052FE00057DD8E /* StanfordMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C742D71B052FE00057DD8E /* StanfordMapTests.swift */; };
+		F7C742E21B0531370057DD8E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C742E11B0531370057DD8E /* LocationManager.swift */; };
+		F7C742E41B0532120057DD8E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C742E31B0532120057DD8E /* LoginViewController.swift */; };
+		F7C742E61B0532490057DD8E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C742E51B0532490057DD8E /* MapViewController.swift */; };
+		F7C742E81B0532950057DD8E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C742E71B0532950057DD8E /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +32,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0DA35FEA3CAD789F56FB3B85 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		1784AF9D83B53D2407B5F019 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D2EF7B56C691E593E790B4DC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7484C6E1B05411F00E82475 /* SearchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
 		F7C742BC1B052FE00057DD8E /* StanfordMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StanfordMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C742C01B052FE00057DD8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7C742C11B052FE00057DD8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +46,11 @@
 		F7C742D11B052FE00057DD8E /* StanfordMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StanfordMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C742D61B052FE00057DD8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7C742D71B052FE00057DD8E /* StanfordMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StanfordMapTests.swift; sourceTree = "<group>"; };
+		F7C742E11B0531370057DD8E /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		F7C742E31B0532120057DD8E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F7C742E51B0532490057DD8E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		F7C742E71B0532950057DD8E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		F7C742E91B0532B80057DD8E /* StanfordMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StanfordMap-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CB8376767BBD86597CEEC48 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +72,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9BC145BE6AB45404DDDA0640 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D2EF7B56C691E593E790B4DC /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A89A8577D6CA8B558E602938 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0DA35FEA3CAD789F56FB3B85 /* Pods.debug.xcconfig */,
+				1784AF9D83B53D2407B5F019 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F7484C6C1B05338B00E82475 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F7C742E31B0532120057DD8E /* LoginViewController.swift */,
+				F7C742E71B0532950057DD8E /* RegisterViewController.swift */,
+				F7C742E51B0532490057DD8E /* MapViewController.swift */,
+				F7C742C31B052FE00057DD8E /* ViewController.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		F7484C6D1B05339100E82475 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F7484C6E1B05411F00E82475 /* SearchManager.swift */,
+				F7C742E11B0531370057DD8E /* LocationManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 		F7C742B31B052FDF0057DD8E = {
 			isa = PBXGroup;
 			children = (
 				F7C742BE1B052FE00057DD8E /* StanfordMap */,
 				F7C742D41B052FE00057DD8E /* StanfordMapTests */,
 				F7C742BD1B052FE00057DD8E /* Products */,
+				A89A8577D6CA8B558E602938 /* Pods */,
+				9BC145BE6AB45404DDDA0640 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,12 +132,14 @@
 		F7C742BE1B052FE00057DD8E /* StanfordMap */ = {
 			isa = PBXGroup;
 			children = (
+				F7484C6D1B05339100E82475 /* Managers */,
+				F7484C6C1B05338B00E82475 /* UI */,
 				F7C742C11B052FE00057DD8E /* AppDelegate.swift */,
-				F7C742C31B052FE00057DD8E /* ViewController.swift */,
 				F7C742C51B052FE00057DD8E /* Main.storyboard */,
 				F7C742C81B052FE00057DD8E /* Images.xcassets */,
 				F7C742CA1B052FE00057DD8E /* LaunchScreen.xib */,
 				F7C742BF1B052FE00057DD8E /* Supporting Files */,
+				F7C742E91B0532B80057DD8E /* StanfordMap-Bridging-Header.h */,
 			);
 			path = StanfordMap;
 			sourceTree = "<group>";
@@ -119,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7C742DB1B052FE00057DD8E /* Build configuration list for PBXNativeTarget "StanfordMap" */;
 			buildPhases = (
+				22A254DE34E381B793BB324F /* Check Pods Manifest.lock */,
 				F7C742B81B052FE00057DD8E /* Sources */,
 				F7C742B91B052FE00057DD8E /* Frameworks */,
 				F7C742BA1B052FE00057DD8E /* Resources */,
+				6CFC9D8ECE24C1EAC7CD298F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,13 +266,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		22A254DE34E381B793BB324F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6CFC9D8ECE24C1EAC7CD298F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F7C742B81B052FE00057DD8E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C742E41B0532120057DD8E /* LoginViewController.swift in Sources */,
+				F7484C6F1B05411F00E82475 /* SearchManager.swift in Sources */,
 				F7C742C41B052FE00057DD8E /* ViewController.swift in Sources */,
 				F7C742C21B052FE00057DD8E /* AppDelegate.swift in Sources */,
+				F7C742E81B0532950057DD8E /* RegisterViewController.swift in Sources */,
+				F7C742E61B0532490057DD8E /* MapViewController.swift in Sources */,
+				F7C742E21B0531370057DD8E /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,21 +437,28 @@
 		};
 		F7C742DC1B052FE00057DD8E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DA35FEA3CAD789F56FB3B85 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = StanfordMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "StanfordMap/StanfordMap-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		F7C742DD1B052FE00057DD8E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1784AF9D83B53D2407B5F019 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = StanfordMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "StanfordMap/StanfordMap-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -411,6 +515,7 @@
 				F7C742DD1B052FE00057DD8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F7C742DE1B052FE00057DD8E /* Build configuration list for PBXNativeTarget "StanfordMapTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +524,7 @@
 				F7C742E01B052FE00057DD8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
