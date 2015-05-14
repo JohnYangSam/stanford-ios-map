@@ -1,0 +1,6 @@
+framework module CheatyXML {
+  umbrella header "Pods-CheatyXML-umbrella.h"
+
+  export *
+  module * { export * }
+}

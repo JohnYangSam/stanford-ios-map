@@ -21,16 +21,19 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Bolts/Tasks (1.1.5)
+  - CheatyXML (1.1)
   - Parse (1.7.2.2):
     - Bolts/Tasks (>= 1.1.5)
 
 DEPENDENCIES:
   - AFNetworking
+  - CheatyXML
   - Parse
 
 SPEC CHECKSUMS:
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
   Bolts: aac24961496d504aa56fc267cde95162a71bac39
+  CheatyXML: 640cb8e2022d00409563e94cdecf6d12d68d6ba7
   Parse: 6187586a80eb7b4960d755f85e1353148a611f87
 
 COCOAPODS: 0.37.1
