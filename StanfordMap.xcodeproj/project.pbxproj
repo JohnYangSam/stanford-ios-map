@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		807EE573BD1923A1A5A099D6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17681023C955831439FE6418 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F7484C721B05429D00E82475 /* StanfordPlacesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7484C711B05429D00E82475 /* StanfordPlacesClient.swift */; };
+		F765760E1B056663002BA744 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = F765760D1B056663002BA744 /* Building.swift */; };
 		F7C742C21B052FE00057DD8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C742C11B052FE00057DD8E /* AppDelegate.swift */; };
 		F7C742C41B052FE00057DD8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C742C31B052FE00057DD8E /* ViewController.swift */; };
 		F7C742C71B052FE00057DD8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7C742C51B052FE00057DD8E /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		17681023C955831439FE6418 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1784AF9D83B53D2407B5F019 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F7484C711B05429D00E82475 /* StanfordPlacesClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StanfordPlacesClient.swift; sourceTree = "<group>"; };
+		F765760D1B056663002BA744 /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		F7C742BC1B052FE00057DD8E /* StanfordMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StanfordMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C742C01B052FE00057DD8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7C742C11B052FE00057DD8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,14 @@
 			name = Networking;
 			sourceTree = "<group>";
 		};
+		F765760F1B05666A002BA744 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F765760D1B056663002BA744 /* Building.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		F7C742B31B052FDF0057DD8E = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +149,7 @@
 		F7C742BE1B052FE00057DD8E /* StanfordMap */ = {
 			isa = PBXGroup;
 			children = (
+				F765760F1B05666A002BA744 /* Models */,
 				F7484C701B05426200E82475 /* Networking */,
 				F7484C6D1B05339100E82475 /* Managers */,
 				F7484C6C1B05338B00E82475 /* UI */,
@@ -335,6 +346,7 @@
 				F7C742E61B0532490057DD8E /* MapViewController.swift in Sources */,
 				F7C742E21B0531370057DD8E /* LocationManager.swift in Sources */,
 				F7484C721B05429D00E82475 /* StanfordPlacesClient.swift in Sources */,
+				F765760E1B056663002BA744 /* Building.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

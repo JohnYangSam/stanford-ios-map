@@ -38,7 +38,7 @@ class StanfordPlacesClient: NSObject {
         super.init()
     }
     
-    func searchWithCompletion(searchTerm: String, completion: ()) {
+    func searchBuildingsWithCompletion(searchTerm: String, completion: (buildings:[Building]?, error: NSError?) -> Void) {
         
         var params = NSMutableDictionary()
         params.setValue(searchTerm, forKey: "srch")
@@ -50,18 +50,25 @@ class StanfordPlacesClient: NSObject {
                 var data: NSData = responseObject as! NSData
                 var parser: XMLParser = XMLParser(data: data)!
                 
-                for element in parser.rootElement {
-                    println("Element: \(element.tagName)")
+                var buildings:[Building] = []
+                
+                if parser.rootElement.numberOfChildElements > 0 {
+                    for element: XMLParser.XMLElement in parser.rootElement {
+                        var building: Building = Building(element: element)
+                        
+                        buildings.append(building)
+                        //building.print()
+
+                    }
                 }
-                
-                //print("XML response: \(data)")
-                
-                //println("\(responseObject)")
+                completion(buildings: buildings, error: nil)
             },
             
             failure:{(operation: AFHTTPRequestOperation!, error: NSError!)in
                 
                 println("Error: "+error.localizedDescription)
+                
+                completion(buildings: nil, error: error)
         })
 
     }
