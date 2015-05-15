@@ -16,7 +16,10 @@ class ViewController: UIViewController {
         println("ViewController Loading")
         let client = StanfordPlacesClient()
         client.searchBuildingsWithCompletion("Volley", completion: { (buildings:[Building]?, error: NSError?) -> Void in
-            println("\(buildings)")
+            println("\(buildings!)")
+            for building in buildings! {
+                building.print()
+            }
         })
     }
 
