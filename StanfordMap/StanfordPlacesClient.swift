@@ -149,6 +149,7 @@ class StanfordPlacesClient: NSObject {
             searchBuildingsWithCompletion(searchTerm, completion: completion)
         } else {
             var buildings: [Building] = []
+            
         }
         
         var params = NSMutableDictionary()
