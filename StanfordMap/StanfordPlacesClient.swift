@@ -82,21 +82,9 @@ class StanfordPlacesClient: NSObject {
             
             // Deduplication
             
-            var deduplicated: NSMutableArray = NSMutableArray(array: buildings)
+            var deduplicated:[Building] = Array(Set(buildings))
             
-            // Go from the back to the front to be safe
-            for var index = deduplicated.count - 1; index >= 0; --index {
-                for var prevIndex = 0; prevIndex < index; ++prevIndex {
-                    if deduplicated[prevIndex].name == deduplicated[index].name {
-                        deduplicated.removeObjectAtIndex(index)
-                        continue
-                    }
-                }
-            }
-            
-            // Call the final completion block
-            var newBuildingsArray: [Building] = deduplicated.copy() as! [Building]
-            completion(buildings: newBuildingsArray, error: nil)
+            completion(buildings: deduplicated, error: nil)
             
         // We still ahve multiple search terms
         } else {
@@ -129,7 +117,7 @@ class StanfordPlacesClient: NSObject {
                             
                         }
                     }
-                    completion(buildings: buildings, error: nil)
+                    self.searchBuildingsWithCompletionRecurse(updatedSearchTerms, buildings: newBuildings, completion: completion)
                 },
                 
                 failure:{(operation: AFHTTPRequestOperation!, error: NSError!)in
@@ -149,42 +137,8 @@ class StanfordPlacesClient: NSObject {
             searchBuildingsWithCompletion(searchTerm, completion: completion)
         } else {
             var buildings: [Building] = []
-            
+            searchBuildingsWithCompletionRecurse(terms, buildings: buildings, completion: completion)
         }
-        
-        var params = NSMutableDictionary()
-        params.setValue(searchTerm, forKey: "srch")
-        
-        manager.GET("",
-            parameters: params,
-            success:{(operation: AFHTTPRequestOperation!, responseObject: AnyObject!)in
-                
-                var data: NSData = responseObject as! NSData
-                var parser: XMLParser = XMLParser(data: data)!
-                
-                var buildings:[Building] = []
-                
-                if parser.rootElement.numberOfChildElements > 0 {
-                    for element: XMLParser.XMLElement in parser.rootElement {
-                        var building: Building = Building(element: element)
-                        
-                        buildings.append(building)
-                        //building.print()
-                        
-                    }
-                }
-                completion(buildings: buildings, error: nil)
-            },
-            
-            failure:{(operation: AFHTTPRequestOperation!, error: NSError!)in
-                
-                println("Error: "+error.localizedDescription)
-                
-                completion(buildings: nil, error: error)
-        })
-
-        
-        
     }
     
 }
