@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		807EE573BD1923A1A5A099D6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17681023C955831439FE6418 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8716AF3B1B0B394200427692 /* AlternateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716AF3A1B0B394200427692 /* AlternateTableViewController.swift */; };
+		8716AF3D1B0B3A0200427692 /* AlternateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716AF3C1B0B3A0200427692 /* AlternateTableViewCell.swift */; };
 		F7484C721B05429D00E82475 /* StanfordPlacesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7484C711B05429D00E82475 /* StanfordPlacesClient.swift */; };
 		F765760E1B056663002BA744 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = F765760D1B056663002BA744 /* Building.swift */; };
 		F7C742C21B052FE00057DD8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C742C11B052FE00057DD8E /* AppDelegate.swift */; };
@@ -36,6 +38,8 @@
 		0DA35FEA3CAD789F56FB3B85 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		17681023C955831439FE6418 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1784AF9D83B53D2407B5F019 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8716AF3A1B0B394200427692 /* AlternateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlternateTableViewController.swift; path = StanfordMap/AlternateTableViewController.swift; sourceTree = "<group>"; };
+		8716AF3C1B0B3A0200427692 /* AlternateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlternateTableViewCell.swift; path = StanfordMap/AlternateTableViewCell.swift; sourceTree = "<group>"; };
 		F7484C711B05429D00E82475 /* StanfordPlacesClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StanfordPlacesClient.swift; sourceTree = "<group>"; };
 		F765760D1B056663002BA744 /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		F7C742BC1B052FE00057DD8E /* StanfordMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StanfordMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +133,8 @@
 		F7C742B31B052FDF0057DD8E = {
 			isa = PBXGroup;
 			children = (
+				8716AF3C1B0B3A0200427692 /* AlternateTableViewCell.swift */,
+				8716AF3A1B0B394200427692 /* AlternateTableViewController.swift */,
 				F7C742BE1B052FE00057DD8E /* StanfordMap */,
 				F7C742D41B052FE00057DD8E /* StanfordMapTests */,
 				F7C742BD1B052FE00057DD8E /* Products */,
@@ -339,9 +345,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8716AF3B1B0B394200427692 /* AlternateTableViewController.swift in Sources */,
 				F7C742E41B0532120057DD8E /* LoginViewController.swift in Sources */,
 				F7C742C41B052FE00057DD8E /* ViewController.swift in Sources */,
 				F7C742C21B052FE00057DD8E /* AppDelegate.swift in Sources */,
+				8716AF3D1B0B3A0200427692 /* AlternateTableViewCell.swift in Sources */,
 				F7C742E81B0532950057DD8E /* RegisterViewController.swift in Sources */,
 				F7C742E61B0532490057DD8E /* MapViewController.swift in Sources */,
 				F7C742E21B0531370057DD8E /* LocationManager.swift in Sources */,

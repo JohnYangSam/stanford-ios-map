@@ -1,26 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fuI-sZ-91l">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StanfordMap" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
         <!--Register View Controller-->
         <scene sceneID="Wuf-BJ-67l">
             <objects>
@@ -86,42 +69,12 @@
                         <outlet property="email" destination="Bn6-Hx-JBx" id="EzV-Wr-saE"/>
                         <outlet property="password" destination="Vum-0h-P9c" id="WW3-SZ-7ZZ"/>
                         <outlet property="username" destination="BpU-PV-fjo" id="BA5-eF-Uno"/>
-                        <segue destination="DmN-ut-izU" kind="modal" identifier="postSignUp" id="vDY-SK-dHu"/>
+                        <segue destination="fuI-sZ-91l" kind="presentation" identifier="postSignUp" id="LAJ-dC-0GP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZa-2c-sIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="84" y="1012"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Spu-QG-rTU">
-            <objects>
-                <viewController id="DmN-ut-izU" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QiT-bo-NkC"/>
-                        <viewControllerLayoutGuide type="bottom" id="EPl-aL-zfn"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="59c-Kf-f2j">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufK-8i-8VR">
-                                <rect key="frame" x="114" y="269" width="92" height="30"/>
-                                <state key="normal" title="Click for Map">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="sfT-rF-494" kind="presentation" id="BfA-ET-5oX"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.15686275059999999" green="0.66666668650000005" blue="0.97254908080000002" alpha="1" colorSpace="deviceRGB"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Z3-ka-3PU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="330" y="1475"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Q3J-aQ-Dad">
@@ -171,27 +124,27 @@
                     <connections>
                         <outlet property="password" destination="ThO-5L-FTJ" id="ykB-6F-31T"/>
                         <outlet property="username" destination="bki-IL-lIf" id="33K-1G-jix"/>
-                        <segue destination="DmN-ut-izU" kind="presentation" identifier="postLogin" id="Jh0-Pm-Irb"/>
+                        <segue destination="fuI-sZ-91l" kind="presentation" identifier="postLogin" id="ue6-8k-SD4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R2F-mz-hfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="573" y="990"/>
+            <point key="canvasLocation" x="445" y="1012"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="DJf-6U-fHT">
             <objects>
-                <viewController id="sfT-rF-494" customClass="MapViewController" customModule="StanfordMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NormalViewController" id="sfT-rF-494" customClass="MapViewController" customModule="StanfordMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8xq-fX-C1c"/>
                         <viewControllerLayoutGuide type="bottom" id="mIh-7f-y1M"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jLp-BB-1Me">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LOA-5h-a4c">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -202,16 +155,72 @@
                             <constraint firstAttribute="trailing" secondItem="LOA-5h-a4c" secondAttribute="trailing" id="vy8-Gf-Dap"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ZvY-wz-lzz"/>
                     <connections>
                         <outlet property="mapView" destination="LOA-5h-a4c" id="ObS-Uf-EiP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTu-RU-OEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1077" y="380"/>
+            <point key="canvasLocation" x="886" y="1433"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2Nh-FK-p8t">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fuI-sZ-91l" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q2C-6K-srz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sfT-rF-494" kind="relationship" relationship="rootViewController" id="X2P-ki-JRb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qiY-H6-yJy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="251" y="1758"/>
+        </scene>
+        <!--Alternate Table View Controller-->
+        <scene sceneID="qSq-Rv-x9e">
+            <objects>
+                <tableViewController storyboardIdentifier="aTV" id="JMs-hW-63N" customClass="AlternateTableViewController" customModule="StanfordMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="39" sectionHeaderHeight="22" sectionFooterHeight="22" id="72W-O5-sM1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LargeCell" rowHeight="39" id="6Qy-wa-9mj" customClass="AlternateTableViewCell" customModule="StanfordMap" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Qy-wa-9mj" id="YRf-8W-Zie">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qg8-JH-5dF">
+                                            <rect key="frame" x="14" y="6" width="532" height="25"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="hugeCountryLabel" destination="Qg8-JH-5dF" id="L20-xw-5Vt"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JMs-hW-63N" id="Tx9-vs-7tk"/>
+                            <outlet property="delegate" destination="JMs-hW-63N" id="ySG-vX-NnG"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="94I-Og-RaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1459" y="718"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vDY-SK-dHu"/>
+        <segue reference="ue6-8k-SD4"/>
     </inferredMetricsTieBreakers>
 </document>
