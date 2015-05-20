@@ -9,6 +9,8 @@
 import UIKit
 
 class AlternateTableViewController: UITableViewController, UISearchResultsUpdating {
+    
+    let client:StanfordPlacesClient = StanfordPlacesClient()
 
     let viewController = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("NormalViewController") as! MapViewController
     
@@ -35,10 +37,22 @@ class AlternateTableViewController: UITableViewController, UISearchResultsUpdati
     func updateSearchResultsForSearchController(searchController: UISearchController)
     {
         viewController.searchArray.removeAll(keepCapacity: false)
-        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text)
-        let array = (viewController.countryArray as NSArray).filteredArrayUsingPredicate(searchPredicate)
-        viewController.searchArray = array as! [String]
-        self.tableView.reloadData()
+        var searchString:String = searchController.searchBar.text
+        client.searchBuildingsFuzzyWithCompletion(searchString, completion: { (buildings, error) -> Void in
+            
+            if error != nil {
+                println("Error returning results")
+            } else {
+            
+                var buildingNames:[String] = []
+                for building in buildings! {
+                    buildingNames.append(building.name!)
+                }
+                self.viewController.searchArray = buildingNames
+                self.tableView.reloadData()
+            }
+        })
+        
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
