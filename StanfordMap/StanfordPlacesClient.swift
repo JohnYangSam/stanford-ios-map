@@ -48,18 +48,18 @@ class StanfordPlacesClient: NSObject {
             parameters: params,
             success:{(operation: AFHTTPRequestOperation!, responseObject: AnyObject!)in
                 
-                var data: NSData = responseObject as! NSData
-                var parser: XMLParser = XMLParser(data: data)!
-                
                 var buildings:[Building] = []
-                
-                if parser.rootElement.numberOfChildElements > 0 {
-                    for element: XMLParser.XMLElement in parser.rootElement {
-                        var building: Building = Building(element: element)
-                        
-                        buildings.append(building)
-                        //building.print()
+                var data: NSData? = responseObject as? NSData
+                if (data != nil) {
+                    var parser: XMLParser = XMLParser(data: data)!
+                    if parser.rootElement.numberOfChildElements > 0 {
+                        for element: XMLParser.XMLElement in parser.rootElement {
+                            var building: Building = Building(element: element)
+                            
+                            buildings.append(building)
+                            //building.print()
 
+                        }
                     }
                 }
                 completion(buildings: buildings, error: nil)
@@ -103,18 +103,18 @@ class StanfordPlacesClient: NSObject {
                 parameters: params,
                 success:{(operation: AFHTTPRequestOperation!, responseObject: AnyObject!)in
                     
-                    var data: NSData = responseObject as! NSData
-                    var parser: XMLParser = XMLParser(data: data)!
-                    
                     var newBuildings:[Building] = NSArray(array: buildings) as! [Building]
-                    
-                    if parser.rootElement.numberOfChildElements > 0 {
-                        for element: XMLParser.XMLElement in parser.rootElement {
-                            var building: Building = Building(element: element)
-                            
-                            newBuildings.append(building)
-                            //building.print()
-                            
+                    var data: NSData? = responseObject as? NSData
+                    if (data != nil) {
+                        var parser: XMLParser = XMLParser(data: data)!
+                        if parser.rootElement.numberOfChildElements > 0 {
+                            for element: XMLParser.XMLElement in parser.rootElement {
+                                var building: Building = Building(element: element)
+                                
+                                newBuildings.append(building)
+                                //building.print()
+                                
+                            }
                         }
                     }
                     self.searchBuildingsWithCompletionRecurse(updatedSearchTerms, buildings: newBuildings, completion: completion)

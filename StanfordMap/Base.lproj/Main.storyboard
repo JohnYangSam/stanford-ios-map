@@ -152,23 +152,57 @@
         <!--Map View Controller-->
         <scene sceneID="DJf-6U-fHT">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rTu-RU-OEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="NormalViewController" id="sfT-rF-494" customClass="MapViewController" customModule="StanfordMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8xq-fX-C1c"/>
                         <viewControllerLayoutGuide type="bottom" id="mIh-7f-y1M"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jLp-BB-1Me">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LOA-5h-a4c">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="d7t-1G-9gR">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" id="a68-Pt-EI1" customClass="SearchResultCell" customModule="StanfordMap" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a68-Pt-EI1" id="Qx2-2S-VKN">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tm1-WW-d2s">
+                                                    <rect key="frame" x="8" y="11" width="584" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Tm1-WW-d2s" secondAttribute="trailing" constant="8" id="HYO-QD-Vb3"/>
+                                                <constraint firstItem="Tm1-WW-d2s" firstAttribute="leading" secondItem="Qx2-2S-VKN" secondAttribute="leading" constant="8" id="aT9-ko-D3M"/>
+                                                <constraint firstAttribute="centerY" secondItem="Tm1-WW-d2s" secondAttribute="centerY" id="ccp-Ei-8M8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="searchResultName" destination="Tm1-WW-d2s" id="OMr-Q0-U8t"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LOA-5h-a4c" firstAttribute="top" secondItem="jLp-BB-1Me" secondAttribute="top" id="0e5-4I-A4y"/>
+                            <constraint firstItem="mIh-7f-y1M" firstAttribute="top" secondItem="d7t-1G-9gR" secondAttribute="bottom" id="0lp-2r-zc1"/>
+                            <constraint firstItem="d7t-1G-9gR" firstAttribute="leading" secondItem="jLp-BB-1Me" secondAttribute="leading" id="9Sp-ru-OXk"/>
                             <constraint firstItem="LOA-5h-a4c" firstAttribute="leading" secondItem="jLp-BB-1Me" secondAttribute="leading" id="Qjd-f7-7ma"/>
+                            <constraint firstAttribute="trailing" secondItem="d7t-1G-9gR" secondAttribute="trailing" id="SPE-31-Wny"/>
+                            <constraint firstItem="d7t-1G-9gR" firstAttribute="top" secondItem="8xq-fX-C1c" secondAttribute="bottom" id="ftz-pU-80D"/>
                             <constraint firstItem="mIh-7f-y1M" firstAttribute="top" secondItem="LOA-5h-a4c" secondAttribute="bottom" id="mHm-F4-pvk"/>
                             <constraint firstAttribute="trailing" secondItem="LOA-5h-a4c" secondAttribute="trailing" id="vy8-Gf-Dap"/>
                         </constraints>
@@ -176,11 +210,11 @@
                     <navigationItem key="navigationItem" id="ZvY-wz-lzz"/>
                     <connections>
                         <outlet property="mapView" destination="LOA-5h-a4c" id="ObS-Uf-EiP"/>
+                        <outlet property="searchSuggestionsTableView" destination="d7t-1G-9gR" id="VzB-vY-WcN"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rTu-RU-OEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="886" y="1433"/>
+            <point key="canvasLocation" x="968" y="1433"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Nh-FK-p8t">
@@ -239,6 +273,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ue6-8k-SD4"/>
+        <segue reference="LAJ-dC-0GP"/>
     </inferredMetricsTieBreakers>
 </document>
