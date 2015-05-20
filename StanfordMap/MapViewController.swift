@@ -10,7 +10,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
+class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var searchSuggestionsTableView: UITableView!
@@ -41,6 +41,9 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
         // Location code
         // Show the user's location on the map (can also set in storyboard instead)
         mapView.showsUserLocation = true
+        
+        // Set mapView delegate
+        self.mapView.delegate = self
         
         //add in the gesture recognizer
         var longPressRecognizer = UILongPressGestureRecognizer(target: self, action: "addAnnotation:")
@@ -104,7 +107,49 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
         return cell
     }
     
-
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // Get search result
+        var building:Building = searchResults[indexPath.row]
+        
+        // Show the map
+        searchSuggestionsTableView.hidden = true
+        mapView.hidden = false
+        
+        var annotation:MKPointAnnotation = MKPointAnnotation()
+        annotation.coordinate = building.location!
+        annotation.title = building.name
+        annotation.subtitle = building.street
+        mapView.addAnnotation(annotation)
+        
+        // Zoom into map area
+        let region = MKCoordinateRegionMakeWithDistance(building.location!, 1000, 1000)
+        self.mapView.setRegion(region, animated: true)
+    }
+    
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        if let annotation = annotation {
+            let identifier = "pin"
+            var view: MKPinAnnotationView
+            if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
+                as? MKPinAnnotationView { // 2
+                    dequeuedView.annotation = annotation
+                    view = dequeuedView
+            } else {
+                // 3
+                view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                view.canShowCallout = true
+                view.calloutOffset = CGPoint(x: -5, y: 5)
+                view.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIView
+            }
+            return view
+        }
+        return nil
+    }
+    
+    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
+        println("tapped")
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -112,8 +157,8 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
         // and execute the following code whenever a new location is "broadcast" out
         LocationManager.sharedInstance.subscribeToLocationUpdatesWithBlock { (location:CLLocation) -> Void in
             println("Received location update!")
-            let region = MKCoordinateRegionMakeWithDistance(location.coordinate, 1000, 1000)
-            self.mapView.setRegion(region, animated: true)
+            //let region = MKCoordinateRegionMakeWithDistance(location.coordinate, 1000, 1000)
+            //self.mapView.setRegion(region, animated: true)
         }
     }
     
