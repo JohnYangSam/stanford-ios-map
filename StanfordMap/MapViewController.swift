@@ -16,10 +16,10 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
     @IBOutlet weak var searchSuggestionsTableView: UITableView!
     
     var searchResults:[Building] = []
-    
     var searchBar:UISearchBar = UISearchBar()
-    
     var client:StanfordPlacesClient = StanfordPlacesClient()
+    
+    let startingLocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: CLLocationDegrees(37.4282631), longitude: CLLocationDegrees(-122.1712559))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +41,8 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
         // Location code
         // Show the user's location on the map (can also set in storyboard instead)
         mapView.showsUserLocation = true
+        // Center at Stanford
+        mapView.setRegion(MKCoordinateRegionMakeWithDistance(startingLocation, 10000, 10000), animated: true)
         
         // Set mapView delegate
         self.mapView.delegate = self
