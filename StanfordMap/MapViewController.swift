@@ -15,11 +15,13 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var searchSuggestionsTableView: UITableView!
     
-    var searchResults:[Building] = []
     var searchBar:UISearchBar = UISearchBar()
     var client:StanfordPlacesClient = StanfordPlacesClient()
     
     let startingLocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: CLLocationDegrees(37.4282631), longitude: CLLocationDegrees(-122.1712559))
+    
+    var searchResults:[Building] = []
+    var buildingChosen:Building?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,20 +113,22 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // Get search result
-        var building:Building = searchResults[indexPath.row]
+        buildingChosen = searchResults[indexPath.row]
         
         // Show the map
         searchSuggestionsTableView.hidden = true
         mapView.hidden = false
-        
-        var annotation:MKPointAnnotation = MKPointAnnotation()
-        annotation.coordinate = building.location!
-        annotation.title = building.name
-        annotation.subtitle = building.street
-        mapView.addAnnotation(annotation)
-        
-        // Zoom into map area
-        let region = MKCoordinateRegionMakeWithDistance(building.location!, 1000, 1000)
+       
+        for building in searchResults {
+            var annotation:MKPointAnnotation = MKPointAnnotation()
+            annotation.coordinate = building.location!
+            annotation.title = building.name
+            annotation.subtitle = building.street
+            mapView.addAnnotation(annotation)
+        }
+
+        // Zoom into map area of the chosen result
+        let region = MKCoordinateRegionMakeWithDistance(buildingChosen!.location!, 1000, 1000)
         self.mapView.setRegion(region, animated: true)
     }
     
@@ -141,15 +145,24 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
                 view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.canShowCallout = true
                 view.calloutOffset = CGPoint(x: -5, y: 5)
-                view.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIView
+                
+                var calloutButton = UIButton.buttonWithType(.DetailDisclosure) as! UIView
+                view.rightCalloutAccessoryView = calloutButton
             }
+            // Make the current chosen building green
+            if annotation.title == buildingChosen?.name {
+                view.pinColor = MKPinAnnotationColor.Green
+            }
+            
             return view
         }
         return nil
     }
     
+    
     func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
         println("tapped")
+        view
     }
     
     override func viewWillAppear(animated: Bool) {
