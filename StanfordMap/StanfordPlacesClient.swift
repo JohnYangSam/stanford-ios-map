@@ -154,7 +154,7 @@ class StanfordPlacesClient: NSObject {
             var updatedSearchTerms:[String] = newSearchTerms.copy() as! [String]
         
             // Call the Stanford Campus Map API
-            reporManager.GET("",
+            reportManager.GET("",
                 parameters: params,
                 success:{(operation: AFHTTPRequestOperation!, responseObject: AnyObject!)in
                     
