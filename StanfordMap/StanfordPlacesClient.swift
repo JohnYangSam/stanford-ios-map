@@ -50,15 +50,21 @@ class StanfordPlacesClient: NSObject {
                 
                 var buildings:[Building] = []
                 var data: NSData? = responseObject as? NSData
+                
+                // This inner wrapping is to deal with wrapping issues with the API
                 if (data != nil) {
-                    var parser: XMLParser = XMLParser(data: data)!
-                    if parser.rootElement.numberOfChildElements > 0 {
-                        for element: XMLParser.XMLElement in parser.rootElement {
-                            var building: Building = Building(element: element)
-                            
-                            buildings.append(building)
-                            //building.print()
+                    // This extra unwrapping was necessary to hit unusual breaking cases
+                    var parserOptional: XMLParser? = XMLParser(data: data)
+                    if let parser:XMLParser = parserOptional {
+                        
+                        if parser.rootElement.numberOfChildElements > 0 {
+                            for element: XMLParser.XMLElement in parser.rootElement {
+                                var building: Building = Building(element: element)
+                                
+                                buildings.append(building)
+                                //building.print()
 
+                            }
                         }
                     }
                 }
