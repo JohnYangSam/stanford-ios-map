@@ -113,6 +113,10 @@ class StanfordPlacesClient: NSObject {
                 var data: NSData? = responseObject as? NSData
                 if (data != nil) {
                     // NEED TO PARSE HTML FOR THE PICTURE HERE
+                    // http://campus-map.stanford.edu/js/stan_cm_js.cfm
+                    // view-source:http://campus-map.stanford.edu/report-cm.cfm?id=02-640
+                    // http://campus-map.stanford.edu/bldg_xml.cfm?srch=cow
+                    // http://campus-map.stanford.edu/report-cm.cfm?id=02-640
                 }
             },
             
@@ -150,7 +154,7 @@ class StanfordPlacesClient: NSObject {
             var updatedSearchTerms:[String] = newSearchTerms.copy() as! [String]
         
             // Call the Stanford Campus Map API
-            manager.GET("",
+            reporManager.GET("",
                 parameters: params,
                 success:{(operation: AFHTTPRequestOperation!, responseObject: AnyObject!)in
                     
