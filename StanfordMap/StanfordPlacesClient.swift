@@ -117,6 +117,7 @@ class StanfordPlacesClient: NSObject {
                     // view-source:http://campus-map.stanford.edu/report-cm.cfm?id=02-640
                     // http://campus-map.stanford.edu/bldg_xml.cfm?srch=cow
                     // http://campus-map.stanford.edu/report-cm.cfm?id=02-640
+                    
                 }
             },
             
