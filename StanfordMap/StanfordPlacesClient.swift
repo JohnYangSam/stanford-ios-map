@@ -101,7 +101,7 @@ class StanfordPlacesClient: NSObject {
         
     }
     
-    func getBuildingReportWithCompletion(buildingId: String, completion: (imageString:String?, error:NSError?) -> Void) {
+    func getBuildingReportImageStringWithCompletion(buildingId: String, completion: (imageString:String?, error:NSError?) -> Void) {
         var params = NSMutableDictionary()
         params.setValue(buildingId, forKey: "id")
         

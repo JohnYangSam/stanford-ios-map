@@ -118,6 +118,9 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
         // Show the map
         searchSuggestionsTableView.hidden = true
         mapView.hidden = false
+        
+        // Clear current annotations before adding new ones
+        removeAllPinsExceptUserLocation()
        
         for building in searchResults {
             var annotation:MKPointAnnotation = MKPointAnnotation()
@@ -130,6 +133,15 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
         // Zoom into map area of the chosen result
         let region = MKCoordinateRegionMakeWithDistance(buildingChosen!.location!, 1000, 1000)
         self.mapView.setRegion(region, animated: true)
+    }
+    
+    func removeAllPinsExceptUserLocation() {
+        var userLocation = mapView.userLocation
+        var pins:NSMutableArray = NSMutableArray(array: mapView.annotations)
+        if (userLocation != nil) {
+            pins.removeObject(userLocation)
+        }
+        mapView.removeAnnotations(pins as [AnyObject])
     }
     
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {

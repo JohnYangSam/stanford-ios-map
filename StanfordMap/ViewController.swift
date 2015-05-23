@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         println("ViewController Loading")
         let client = StanfordPlacesClient()
-        client.getBuildingReportWithCompletion("02-640", completion: { (imageString, error) -> Void in
+        client.getBuildingReportImageStringWithCompletion("02-640", completion: { (imageString, error) -> Void in
             // nothing
         })
     }
