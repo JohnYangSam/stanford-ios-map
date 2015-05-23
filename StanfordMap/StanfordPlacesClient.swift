@@ -101,7 +101,7 @@ class StanfordPlacesClient: NSObject {
         
     }
     
-    func getBuildingReportWithCompletion(buildingId: String, completion: (imageString:String?, error:NSError) -> Void) {
+    func getBuildingReportWithCompletion(buildingId: String, completion: (imageString:String?, error:NSError?) -> Void) {
         var params = NSMutableDictionary()
         params.setValue(buildingId, forKey: "id")
         
@@ -117,8 +117,14 @@ class StanfordPlacesClient: NSObject {
                     // view-source:http://campus-map.stanford.edu/report-cm.cfm?id=02-640
                     // http://campus-map.stanford.edu/bldg_xml.cfm?srch=cow
                     // http://campus-map.stanford.edu/report-cm.cfm?id=02-640
+                    var dataString = String(NSString(data: data!, encoding:NSUTF8StringEncoding)!)
                     
+                    var imageURLString: String? = self.getImageURLStringFromReportString(dataString)
+                    
+                    completion(imageString: imageURLString, error: nil)
                 }
+                
+                completion(imageString: nil, error: NSError())
             },
             
             failure:{(operation: AFHTTPRequestOperation!, error: NSError!)in
@@ -128,6 +134,20 @@ class StanfordPlacesClient: NSObject {
                 completion(imageString: nil, error: error)
         })
  
+    }
+    
+    // Returns the URL string from the report string
+    func getImageURLStringFromReportString(dataString: String) -> String {
+        
+        var index1 = dataString.rangeOfString("IMAGE SRC=\"")?.endIndex
+        var str2 = dataString.substringFromIndex(index1!)
+        var index2 = str2.rangeOfString(".jpg")?.endIndex
+        var str3 = str2.substringToIndex(index2!)
+        
+        // Debugging
+        println(str3)
+       
+        return str3
     }
     
     // This makes recursive calls to the API until we get all results, then it will deduplicate them

@@ -5,4 +5,3 @@ use_frameworks!
 pod "AFNetworking"
 pod "Parse"
 pod "CheatyXML"
-pod "BRYHTMLParser"
