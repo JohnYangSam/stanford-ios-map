@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		807EE573BD1923A1A5A099D6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17681023C955831439FE6418 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8793A2741B11C87A000C21C8 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8793A26F1B11C87A000C21C8 /* SVIndefiniteAnimatedView.m */; };
+		8793A2761B11C87A000C21C8 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8793A2731B11C87A000C21C8 /* SVProgressHUD.m */; };
+		8793A2771B11C8C3000C21C8 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8793A2711B11C87A000C21C8 /* SVProgressHUD.bundle */; };
+		8793A2791B11C8DF000C21C8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8793A2781B11C8DF000C21C8 /* QuartzCore.framework */; };
 		F7484C721B05429D00E82475 /* StanfordPlacesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7484C711B05429D00E82475 /* StanfordPlacesClient.swift */; };
 		F74D9E061B0C3AFF009A62CC /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D9E051B0C3AFF009A62CC /* SearchResultCell.swift */; };
 		F765760E1B056663002BA744 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = F765760D1B056663002BA744 /* Building.swift */; };
@@ -40,6 +44,13 @@
 		0DA35FEA3CAD789F56FB3B85 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		17681023C955831439FE6418 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1784AF9D83B53D2407B5F019 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8793A26E1B11C87A000C21C8 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		8793A26F1B11C87A000C21C8 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		8793A2701B11C87A000C21C8 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		8793A2711B11C87A000C21C8 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		8793A2721B11C87A000C21C8 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		8793A2731B11C87A000C21C8 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		8793A2781B11C8DF000C21C8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F7484C711B05429D00E82475 /* StanfordPlacesClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StanfordPlacesClient.swift; sourceTree = "<group>"; };
 		F74D9E051B0C3AFF009A62CC /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		F765760D1B056663002BA744 /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
@@ -68,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8793A2791B11C8DF000C21C8 /* QuartzCore.framework in Frameworks */,
 				F7D1BC2B1B113631007268A7 /* libxml2.dylib in Frameworks */,
 				807EE573BD1923A1A5A099D6 /* Pods.framework in Frameworks */,
 			);
@@ -83,9 +95,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8793A26D1B11C87A000C21C8 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				8793A26E1B11C87A000C21C8 /* SVIndefiniteAnimatedView.h */,
+				8793A26F1B11C87A000C21C8 /* SVIndefiniteAnimatedView.m */,
+				8793A2701B11C87A000C21C8 /* SVProgressHUD-Prefix.pch */,
+				8793A2711B11C87A000C21C8 /* SVProgressHUD.bundle */,
+				8793A2721B11C87A000C21C8 /* SVProgressHUD.h */,
+				8793A2731B11C87A000C21C8 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		9BC145BE6AB45404DDDA0640 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8793A2781B11C8DF000C21C8 /* QuartzCore.framework */,
 				F7D1BC2A1B113631007268A7 /* libxml2.dylib */,
 				17681023C955831439FE6418 /* Pods.framework */,
 			);
@@ -162,6 +188,7 @@
 		F7C742BE1B052FE00057DD8E /* StanfordMap */ = {
 			isa = PBXGroup;
 			children = (
+				8793A26D1B11C87A000C21C8 /* SVProgressHUD */,
 				F765760F1B05666A002BA744 /* Models */,
 				F7484C701B05426200E82475 /* Networking */,
 				F7484C6D1B05339100E82475 /* Managers */,
@@ -284,6 +311,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8793A2771B11C8C3000C21C8 /* SVProgressHUD.bundle in Resources */,
 				F7C742C71B052FE00057DD8E /* Main.storyboard in Resources */,
 				F7C742CC1B052FE00057DD8E /* LaunchScreen.xib in Resources */,
 				F7C742C91B052FE00057DD8E /* Images.xcassets in Resources */,
@@ -361,8 +389,10 @@
 				F7C742E81B0532950057DD8E /* RegisterViewController.swift in Sources */,
 				F7C742E61B0532490057DD8E /* MapViewController.swift in Sources */,
 				F7C742E21B0531370057DD8E /* LocationManager.swift in Sources */,
+				8793A2761B11C87A000C21C8 /* SVProgressHUD.m in Sources */,
 				F7484C721B05429D00E82475 /* StanfordPlacesClient.swift in Sources */,
 				F765760E1B056663002BA744 /* Building.swift in Sources */,
+				8793A2741B11C87A000C21C8 /* SVIndefiniteAnimatedView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +529,7 @@
 					"/usr/include/libxml2/**",
 				);
 				INFOPLIST_FILE = StanfordMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "StanfordMap/StanfordMap-Bridging-Header.h";
@@ -518,6 +549,7 @@
 					"/usr/include/libxml2/**",
 				);
 				INFOPLIST_FILE = StanfordMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "StanfordMap/StanfordMap-Bridging-Header.h";

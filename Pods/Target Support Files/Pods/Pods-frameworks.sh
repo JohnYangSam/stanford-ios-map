@@ -49,15 +49,15 @@ code_sign() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'AFNetworking.framework'
-  install_framework 'BRYHTMLParser.framework'
   install_framework 'Bolts.framework'
   install_framework 'CheatyXML.framework'
   install_framework 'Parse.framework'
+  install_framework 'SVProgressHUD.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'AFNetworking.framework'
-  install_framework 'BRYHTMLParser.framework'
   install_framework 'Bolts.framework'
   install_framework 'CheatyXML.framework'
   install_framework 'Parse.framework'
+  install_framework 'SVProgressHUD.framework'
 fi

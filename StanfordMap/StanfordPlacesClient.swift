@@ -120,7 +120,6 @@ class StanfordPlacesClient: NSObject {
                     var dataString = String(NSString(data: data!, encoding:NSUTF8StringEncoding)!)
                     
                     var imageURLString: String? = self.getImageURLStringFromReportString(dataString)
-                    
                     completion(imageString: imageURLString, error: nil)
                 }
                 

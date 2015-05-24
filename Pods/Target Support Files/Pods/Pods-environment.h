@@ -48,12 +48,6 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 5
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 3
 
-// BRYHTMLParser
-#define COCOAPODS_POD_AVAILABLE_BRYHTMLParser
-#define COCOAPODS_VERSION_MAJOR_BRYHTMLParser 1
-#define COCOAPODS_VERSION_MINOR_BRYHTMLParser 0
-#define COCOAPODS_VERSION_PATCH_BRYHTMLParser 3
-
 // Bolts/Tasks
 #define COCOAPODS_POD_AVAILABLE_Bolts_Tasks
 #define COCOAPODS_VERSION_MAJOR_Bolts_Tasks 1
@@ -72,4 +66,10 @@
 // so we were not able to define version macros.
 // Please contact the author.
 // Version: 1.7.2.2.
+
+// SVProgressHUD
+#define COCOAPODS_POD_AVAILABLE_SVProgressHUD
+#define COCOAPODS_VERSION_MAJOR_SVProgressHUD 1
+#define COCOAPODS_VERSION_MINOR_SVProgressHUD 1
+#define COCOAPODS_VERSION_PATCH_SVProgressHUD 3
 

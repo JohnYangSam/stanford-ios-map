@@ -14,12 +14,9 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var searchSuggestionsTableView: UITableView!
-    
     var searchBar:UISearchBar = UISearchBar()
     var client:StanfordPlacesClient = StanfordPlacesClient()
-    
     let startingLocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: CLLocationDegrees(37.4282631), longitude: CLLocationDegrees(-122.1712559))
-    
     var searchResults:[Building] = []
     var buildingChosen:Building?
     
@@ -53,24 +50,6 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
         var longPressRecognizer = UILongPressGestureRecognizer(target: self, action: "addAnnotation:")
         longPressRecognizer.minimumPressDuration = 2.0
         mapView.addGestureRecognizer(longPressRecognizer)
-        
-        /*
-        // Configure countrySearchController
-        self.countrySearchController = ({
-            //This presents the results in a sepearate tableView
-            let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-            let alternateController:AlternateTableViewController = storyBoard.instantiateViewControllerWithIdentifier("aTV") as! AlternateTableViewController
-            let controller = UISearchController(searchResultsController: alternateController)
-            controller.hidesNavigationBarDuringPresentation = false
-            controller.dimsBackgroundDuringPresentation = false
-            controller.searchResultsUpdater = alternateController
-            controller.definesPresentationContext = false
-            controller.searchBar.sizeToFit()
-            self.navigationItem.titleView = controller.searchBar
-            return controller
-        })()
-*/
-        
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
@@ -97,6 +76,8 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
         searchBar.text = ""
         mapView.hidden = false
         searchSuggestionsTableView.hidden = true
+        removeAllPinsExceptUserLocation()
+        searchBar.resignFirstResponder()
     }
 
     
@@ -165,7 +146,6 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
             if annotation.title == buildingChosen?.name {
                 view.pinColor = MKPinAnnotationColor.Green
             }
-            
             return view
         }
         return nil
@@ -173,30 +153,15 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
     
     
     func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
-        println("tapped")
         // Get the building information
         var building:Building = getBuildingFromResults(view.annotation.title!)!
-        
         // Instantiate the new detail view controller
         var vc: DetailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
         vc.building = building
-        
         // Get the current navigation controller so we can push the new viewController onto the navigation controller
         self.navigationController!.pushViewController(vc, animated: true)
         
         
-        // Old code left for reference
-        
-        // Get the main navigation controller
-        //var nc: UINavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("MainNavigationController") as! UINavigationController
- 
-        /*
-        
-        var vc: DetailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
-        
-        vc.building = building
-        self.presentViewController(vc, animated: true, completion: nil)
-        */
     }
     
     // This is an inefficient function, but we'll use it for simplicity
@@ -209,16 +174,17 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
         return nil
     }
     
+    @IBAction func mapPressed(sender: AnyObject) {
+        searchBar.resignFirstResponder()
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         // We want to listen to the LocationManager's "radio station"
         // and execute the following code whenever a new location is "broadcast" out
         LocationManager.sharedInstance.subscribeToLocationUpdatesWithBlock { (location:CLLocation) -> Void in
-            println("Received location update!")
-            //let region = MKCoordinateRegionMakeWithDistance(location.coordinate, 1000, 1000)
-            //self.mapView.setRegion(region, animated: true)
         }
+        self.navigationController!.toolbarHidden = true;
     }
     
     func addAnnotation(gestureRecognizer:UIGestureRecognizer) {
