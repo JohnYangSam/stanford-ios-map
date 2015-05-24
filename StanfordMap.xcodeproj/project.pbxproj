@@ -21,6 +21,8 @@
 		F7C742E41B0532120057DD8E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C742E31B0532120057DD8E /* LoginViewController.swift */; };
 		F7C742E61B0532490057DD8E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C742E51B0532490057DD8E /* MapViewController.swift */; };
 		F7C742E81B0532950057DD8E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C742E71B0532950057DD8E /* RegisterViewController.swift */; };
+		F7D1BC2B1B113631007268A7 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D1BC2A1B113631007268A7 /* libxml2.dylib */; };
+		F7D1BC2D1B114811007268A7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D1BC2C1B114811007268A7 /* DetailViewController.swift */; };
 		F7F690301B0C2B1900DE6622 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F6902F1B0C2B1900DE6622 /* ContainerViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		F7C742E51B0532490057DD8E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F7C742E71B0532950057DD8E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F7C742E91B0532B80057DD8E /* StanfordMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StanfordMap-Bridging-Header.h"; sourceTree = "<group>"; };
+		F7D1BC2A1B113631007268A7 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		F7D1BC2C1B114811007268A7 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F7F6902F1B0C2B1900DE6622 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7D1BC2B1B113631007268A7 /* libxml2.dylib in Frameworks */,
 				807EE573BD1923A1A5A099D6 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,6 +86,7 @@
 		9BC145BE6AB45404DDDA0640 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F7D1BC2A1B113631007268A7 /* libxml2.dylib */,
 				17681023C955831439FE6418 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -102,6 +108,7 @@
 				F7C742E31B0532120057DD8E /* LoginViewController.swift */,
 				F7C742E71B0532950057DD8E /* RegisterViewController.swift */,
 				F7C742E51B0532490057DD8E /* MapViewController.swift */,
+				F7D1BC2C1B114811007268A7 /* DetailViewController.swift */,
 				F7C742C31B052FE00057DD8E /* ViewController.swift */,
 				F74D9E051B0C3AFF009A62CC /* SearchResultCell.swift */,
 			);
@@ -345,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7D1BC2D1B114811007268A7 /* DetailViewController.swift in Sources */,
 				F7C742E41B0532120057DD8E /* LoginViewController.swift in Sources */,
 				F7C742C41B052FE00057DD8E /* ViewController.swift in Sources */,
 				F7F690301B0C2B1900DE6622 /* ContainerViewController.swift in Sources */,
@@ -485,6 +493,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"/usr/include/libxml2/**",
+				);
 				INFOPLIST_FILE = StanfordMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -499,6 +512,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"/usr/include/libxml2/**",
+				);
 				INFOPLIST_FILE = StanfordMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

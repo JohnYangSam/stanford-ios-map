@@ -12,28 +12,49 @@ import CheatyXML
 
 class StanfordPlacesClient: NSObject {
     
-    let baseString = "http://campus-map.stanford.edu/bldg_xml.cfm"
+    // Base string for searching buildings
+    let baseSearchString = "http://campus-map.stanford.edu/bldg_xml.cfm"
+  
+    let searchManager:AFHTTPRequestOperationManager
+    let searchRequestSerializer:AFHTTPRequestSerializer
+    let searchResponseSerializer:AFHTTPResponseSerializer
+    
+    // Base string for searching specific building information
+    let baseReportString = "http://campus-map.stanford.edu/report-cm.cfm"
+    
+    let reportManager:AFHTTPRequestOperationManager
+    let reportRequestSerializer:AFHTTPRequestSerializer
+    let reportResponseSerializer:AFHTTPResponseSerializer
     
     let userAgentString = "Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"
    
-    let manager:AFHTTPRequestOperationManager
-    let requestSerializer:AFHTTPRequestSerializer
-    let responseSerializer:AFHTTPResponseSerializer
-    
     override init() {
         
-        requestSerializer = AFHTTPRequestSerializer()
-        requestSerializer.setValue("User-Agent", forHTTPHeaderField: userAgentString)
+        // Search
+        searchRequestSerializer = AFHTTPRequestSerializer()
+        searchRequestSerializer.setValue("User-Agent", forHTTPHeaderField: userAgentString)
         
-        responseSerializer = AFHTTPResponseSerializer()
-        responseSerializer.acceptableContentTypes = Set(["text/xml"])
+        searchResponseSerializer = AFHTTPResponseSerializer()
+        searchResponseSerializer.acceptableContentTypes = Set(["text/xml"])
         
-        var url:NSURL = NSURL(string: baseString)!
-        manager = AFHTTPRequestOperationManager(baseURL: url)
+        var searchURL:NSURL = NSURL(string: baseSearchString)!
+        searchManager = AFHTTPRequestOperationManager(baseURL: searchURL)
         
-        manager.requestSerializer = requestSerializer
-        manager.responseSerializer = responseSerializer
+        searchManager.requestSerializer = searchRequestSerializer
+        searchManager.responseSerializer = searchResponseSerializer
         
+        // Reports
+        reportRequestSerializer = AFHTTPRequestSerializer()
+        reportRequestSerializer.setValue("User-Agent", forHTTPHeaderField: userAgentString)
+        
+        reportResponseSerializer = AFHTTPResponseSerializer()
+        reportResponseSerializer.acceptableContentTypes = Set(["text/html"])
+        
+        var reportURL:NSURL = NSURL(string: baseReportString)!
+        reportManager = AFHTTPRequestOperationManager(baseURL: reportURL)
+        
+        reportManager.requestSerializer = reportRequestSerializer
+        reportManager.responseSerializer = reportResponseSerializer
         
         super.init()
     }
@@ -44,7 +65,7 @@ class StanfordPlacesClient: NSObject {
         var params = NSMutableDictionary()
         params.setValue(searchTerm, forKey: "srch")
         
-        manager.GET("",
+        searchManager.GET("",
             parameters: params,
             success:{(operation: AFHTTPRequestOperation!, responseObject: AnyObject!)in
                 
@@ -80,6 +101,66 @@ class StanfordPlacesClient: NSObject {
         
     }
     
+    func getBuildingReportImageStringWithCompletion(buildingId: String, completion: (imageString:String?, error:NSError?) -> Void) {
+        var params = NSMutableDictionary()
+        params.setValue(buildingId, forKey: "id")
+        
+        // Call the Stanford Campus Map API
+        reportManager.GET("",
+            parameters: params,
+            success:{(operation: AFHTTPRequestOperation!, responseObject: AnyObject!)in
+                
+                var data: NSData? = responseObject as? NSData
+                if (data != nil) {
+                    // NEED TO PARSE HTML FOR THE PICTURE HERE
+                    // http://campus-map.stanford.edu/js/stan_cm_js.cfm
+                    // view-source:http://campus-map.stanford.edu/report-cm.cfm?id=02-640
+                    // http://campus-map.stanford.edu/bldg_xml.cfm?srch=cow
+                    // http://campus-map.stanford.edu/report-cm.cfm?id=02-640
+                    var dataString = String(NSString(data: data!, encoding:NSUTF8StringEncoding)!)
+                    
+                    var imageURLString: String? = self.getImageURLStringFromReportString(dataString)
+                    
+                    completion(imageString: imageURLString, error: nil)
+                }
+                
+                completion(imageString: nil, error: NSError())
+            },
+            
+            failure:{(operation: AFHTTPRequestOperation!, error: NSError!)in
+                
+                println("Error: "+error.localizedDescription)
+                
+                completion(imageString: nil, error: error)
+        })
+ 
+    }
+    
+    // Returns the URL string from the report string
+    // Note: This is quite hacky code
+    func getImageURLStringFromReportString(dataString: String) -> String {
+        
+        var index1 = dataString.rangeOfString("IMAGE SRC=\"")?.endIndex
+        if let index1 = index1 {
+            var str2 = dataString.substringFromIndex(index1)
+            var index2 = str2.rangeOfString(".jpg")?.endIndex
+            if let index2 = index2 {
+                var str3 = str2.substringToIndex(index2)
+                // Debugging
+                println(str3)
+                return str3
+            } else {
+                index2 = str2.rangeOfString(".png")?.endIndex
+                if let index2 = index2 {
+                    var str3 = str2.substringToIndex(index2)
+                    return str3
+                    
+                }
+            }
+        }
+        return "" // No string found
+    }
+    
     // This makes recursive calls to the API until we get all results, then it will deduplicate them
     func searchBuildingsWithCompletionRecurse(searchTerms: [String], buildings: [Building], completion: (buildings:[Building]?, error: NSError?) -> Void) {
         
@@ -105,7 +186,7 @@ class StanfordPlacesClient: NSObject {
             var updatedSearchTerms:[String] = newSearchTerms.copy() as! [String]
         
             // Call the Stanford Campus Map API
-            manager.GET("",
+            reportManager.GET("",
                 parameters: params,
                 success:{(operation: AFHTTPRequestOperation!, responseObject: AnyObject!)in
                     

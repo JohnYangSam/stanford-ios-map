@@ -15,11 +15,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         println("ViewController Loading")
         let client = StanfordPlacesClient()
-        client.searchBuildingsFuzzyWithCompletion("Volley Ball", completion: { (buildings:[Building]?, error: NSError?) -> Void in
-            println("\(buildings!)")
-            for building in buildings! {
-                building.print()
-            }
+        client.getBuildingReportImageStringWithCompletion("02-640", completion: { (imageString, error) -> Void in
+            // nothing
         })
     }
 
