@@ -174,7 +174,39 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
     
     func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
         println("tapped")
-        view
+        // Get the building information
+        var building:Building = getBuildingFromResults(view.annotation.title!)!
+        
+        // Instantiate the new detail view controller
+        var vc: DetailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
+        vc.building = building
+        
+        // Get the current navigation controller so we can push the new viewController onto the navigation controller
+        self.navigationController!.pushViewController(vc, animated: true)
+        
+        
+        // Old code left for reference
+        
+        // Get the main navigation controller
+        //var nc: UINavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("MainNavigationController") as! UINavigationController
+ 
+        /*
+        
+        var vc: DetailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
+        
+        vc.building = building
+        self.presentViewController(vc, animated: true, completion: nil)
+        */
+    }
+    
+    // This is an inefficient function, but we'll use it for simplicity
+    func getBuildingFromResults(buildingName:String) -> Building? {
+        for building in searchResults {
+            if building.name == buildingName {
+                return building
+            }
+        }
+        return nil
     }
     
     override func viewWillAppear(animated: Bool) {

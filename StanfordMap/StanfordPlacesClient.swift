@@ -137,17 +137,28 @@ class StanfordPlacesClient: NSObject {
     }
     
     // Returns the URL string from the report string
+    // Note: This is quite hacky code
     func getImageURLStringFromReportString(dataString: String) -> String {
         
         var index1 = dataString.rangeOfString("IMAGE SRC=\"")?.endIndex
-        var str2 = dataString.substringFromIndex(index1!)
-        var index2 = str2.rangeOfString(".jpg")?.endIndex
-        var str3 = str2.substringToIndex(index2!)
-        
-        // Debugging
-        println(str3)
-       
-        return str3
+        if let index1 = index1 {
+            var str2 = dataString.substringFromIndex(index1)
+            var index2 = str2.rangeOfString(".jpg")?.endIndex
+            if let index2 = index2 {
+                var str3 = str2.substringToIndex(index2)
+                // Debugging
+                println(str3)
+                return str3
+            } else {
+                index2 = str2.rangeOfString(".png")?.endIndex
+                if let index2 = index2 {
+                    var str3 = str2.substringToIndex(index2)
+                    return str3
+                    
+                }
+            }
+        }
+        return "" // No string found
     }
     
     // This makes recursive calls to the API until we get all results, then it will deduplicate them
