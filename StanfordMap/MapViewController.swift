@@ -126,6 +126,10 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
     }
     
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        if annotation.isKindOfClass(MKUserLocation) {
+            return nil;  //return nil to use default blue dot view
+        }
+        
         if let annotation = annotation {
             let identifier = "pin"
             var view: MKPinAnnotationView
