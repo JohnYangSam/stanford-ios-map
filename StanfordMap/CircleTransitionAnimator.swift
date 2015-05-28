@@ -33,7 +33,7 @@ class CircleTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
         //4
         var circleMaskPathInitial = UIBezierPath(ovalInRect: button!.frame)
         var extremePoint = CGPoint(x: button!.center.x - 0, y: button!.center.y - CGRectGetHeight(toViewController.view.bounds))
-        var radius = sqrt((extremePoint.x*extremePoint.x) + (extremePoint.y*extremePoint.y))
+        var radius = sqrt((extremePoint.x*extremePoint.x) + (extremePoint.y*extremePoint.y)) + 30
         var circleMaskPathFinal = UIBezierPath(ovalInRect: CGRectInset(button!.frame, -radius, -radius))
         
         //5
