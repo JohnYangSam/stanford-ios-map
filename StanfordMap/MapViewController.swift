@@ -19,6 +19,7 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
     let startingLocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: CLLocationDegrees(37.4282631), longitude: CLLocationDegrees(-122.1712559))
     var searchResults:[Building] = []
     var buildingChosen:Building?
+    var button:MKAnnotationView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -162,6 +163,7 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
         // Instantiate the new detail view controller
         var vc: DetailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
         vc.building = building
+        button = view
         // Get the current navigation controller so we can push the new viewController onto the navigation controller
         self.navigationController!.pushViewController(vc, animated: true)
         

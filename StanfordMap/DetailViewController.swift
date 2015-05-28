@@ -25,6 +25,10 @@ class DetailViewController: UITableViewController, MFMessageComposeViewControlle
         super.viewDidLoad()
         self.navigationController!.toolbarHidden = false;
         
+        view.layer.borderWidth = 10
+        
+        view.layer.borderColor = UIColor.grayColor().CGColor
+        
         client = StanfordPlacesClient()
         if let bldg = building {
             // Set the image

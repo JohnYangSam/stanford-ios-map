@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		807EE573BD1923A1A5A099D6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17681023C955831439FE6418 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8758C3521B16D9A000E17F24 /* NavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8758C3511B16D9A000E17F24 /* NavigationControllerDelegate.swift */; };
+		8758C3541B16DA8E00E17F24 /* CircleTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8758C3531B16DA8E00E17F24 /* CircleTransitionAnimator.swift */; };
 		8793A2741B11C87A000C21C8 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8793A26F1B11C87A000C21C8 /* SVIndefiniteAnimatedView.m */; };
 		8793A2761B11C87A000C21C8 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8793A2731B11C87A000C21C8 /* SVProgressHUD.m */; };
 		8793A2771B11C8C3000C21C8 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8793A2711B11C87A000C21C8 /* SVProgressHUD.bundle */; };
@@ -44,6 +46,8 @@
 		0DA35FEA3CAD789F56FB3B85 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		17681023C955831439FE6418 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1784AF9D83B53D2407B5F019 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8758C3511B16D9A000E17F24 /* NavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerDelegate.swift; sourceTree = "<group>"; };
+		8758C3531B16DA8E00E17F24 /* CircleTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleTransitionAnimator.swift; sourceTree = "<group>"; };
 		8793A26E1B11C87A000C21C8 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		8793A26F1B11C87A000C21C8 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
 		8793A2701B11C87A000C21C8 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
@@ -199,6 +203,8 @@
 				F7C742CA1B052FE00057DD8E /* LaunchScreen.xib */,
 				F7C742BF1B052FE00057DD8E /* Supporting Files */,
 				F7C742E91B0532B80057DD8E /* StanfordMap-Bridging-Header.h */,
+				8758C3511B16D9A000E17F24 /* NavigationControllerDelegate.swift */,
+				8758C3531B16DA8E00E17F24 /* CircleTransitionAnimator.swift */,
 			);
 			path = StanfordMap;
 			sourceTree = "<group>";
@@ -382,6 +388,7 @@
 			files = (
 				F7D1BC2D1B114811007268A7 /* DetailViewController.swift in Sources */,
 				F7C742E41B0532120057DD8E /* LoginViewController.swift in Sources */,
+				8758C3541B16DA8E00E17F24 /* CircleTransitionAnimator.swift in Sources */,
 				F7C742C41B052FE00057DD8E /* ViewController.swift in Sources */,
 				F7F690301B0C2B1900DE6622 /* ContainerViewController.swift in Sources */,
 				F7C742C21B052FE00057DD8E /* AppDelegate.swift in Sources */,
@@ -392,6 +399,7 @@
 				8793A2761B11C87A000C21C8 /* SVProgressHUD.m in Sources */,
 				F7484C721B05429D00E82475 /* StanfordPlacesClient.swift in Sources */,
 				F765760E1B056663002BA744 /* Building.swift in Sources */,
+				8758C3521B16D9A000E17F24 /* NavigationControllerDelegate.swift in Sources */,
 				8793A2741B11C87A000C21C8 /* SVIndefiniteAnimatedView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
