@@ -89,7 +89,7 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:SearchResultCell = searchSuggestionsTableView.dequeueReusableCellWithIdentifier("SearchResultCell", forIndexPath: indexPath) as! SearchResultCell
-        cell.searchResultName.text = searchResults[indexPath.row].name
+        cell.searchResultName.text = searchResults[indexPath.row].name! + " - " + searchResults[indexPath.row].buildingId!
         return cell
     }
     
