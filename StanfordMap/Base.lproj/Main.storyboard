@@ -185,17 +185,21 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a68-Pt-EI1" id="Qx2-2S-VKN">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tm1-WW-d2s">
-                                                    <rect key="frame" x="8" y="11" width="584" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tm1-WW-d2s">
+                                                    <rect key="frame" x="8" y="11" width="584" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="584" id="9XR-6Q-udT"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Tm1-WW-d2s" secondAttribute="trailing" constant="8" id="HYO-QD-Vb3"/>
-                                                <constraint firstItem="Tm1-WW-d2s" firstAttribute="leading" secondItem="Qx2-2S-VKN" secondAttribute="leading" constant="8" id="aT9-ko-D3M"/>
-                                                <constraint firstAttribute="centerY" secondItem="Tm1-WW-d2s" secondAttribute="centerY" id="ccp-Ei-8M8"/>
+                                                <constraint firstAttribute="trailing" secondItem="Tm1-WW-d2s" secondAttribute="trailing" constant="8" id="16K-2q-CUY"/>
+                                                <constraint firstItem="Tm1-WW-d2s" firstAttribute="leading" secondItem="Qx2-2S-VKN" secondAttribute="leading" constant="8" id="Bzv-od-43e"/>
+                                                <constraint firstItem="Tm1-WW-d2s" firstAttribute="top" secondItem="Qx2-2S-VKN" secondAttribute="top" constant="11" id="Sq6-dq-uDu"/>
+                                                <constraint firstAttribute="bottom" secondItem="Tm1-WW-d2s" secondAttribute="bottom" constant="8" id="e6E-XN-7lO"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -273,8 +277,11 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8dl-N2-ySN" id="8Rm-1a-L0z">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Building Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWV-5P-Zw1">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Building Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWV-5P-Zw1">
                                                     <rect key="frame" x="20" y="9" width="290" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="290" id="iRC-q7-Tll"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -317,8 +324,11 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sA0-VX-1aR" id="3HE-nG-a1i">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRo-oB-AmF">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRo-oB-AmF">
                                                     <rect key="frame" x="20" y="9" width="290" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="290" id="imm-tH-Y1U"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>

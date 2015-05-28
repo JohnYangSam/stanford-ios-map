@@ -32,6 +32,7 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
         // Set up the tableview
         self.searchSuggestionsTableView.delegate = self
         self.searchSuggestionsTableView.dataSource = self
+        self.searchSuggestionsTableView.rowHeight = UITableViewAutomaticDimension
         
         // Setup search bar
         self.navigationItem.titleView = searchBar
@@ -51,6 +52,10 @@ class MapViewController: UIViewController, UISearchBarDelegate, UITableViewDataS
         var longPressRecognizer = UILongPressGestureRecognizer(target: self, action: "addAnnotation:")
         longPressRecognizer.minimumPressDuration = 2.0
         mapView.addGestureRecognizer(longPressRecognizer)
+    }
+
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 300
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
